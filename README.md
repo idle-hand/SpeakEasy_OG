@@ -1,7 +1,7 @@
 # The-Citizenship-Project
 (Computer Tutor)
 
-Practice site for the Canadian Citizenship Test.= adapted from 
+Practice site for the Canadian Citizenship Test. 
 
 Forked from JakeKandell/quiz-site
 Quiz Website Built in Django

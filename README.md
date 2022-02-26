@@ -1,4 +1,4 @@
-# The-Citizenship-Project
+# Computer Tutor
 (Computer Tutor)
 
 Practice site for the Canadian Citizenship Test. 

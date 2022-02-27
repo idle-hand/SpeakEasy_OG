@@ -1,5 +1,7 @@
 # Computer Tutor
-
+special thanks for basic quiz format
+forked from Website built in Django and styled with HTML and CSS
+by JakeKandell here on github.jakekand@usc.edu linkedin.com/in/jakekandell
 
 Practice site for the Canadian Citizenship Test. 
 

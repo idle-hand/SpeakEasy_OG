@@ -4,6 +4,8 @@ forked from Website built in Django and styled with HTML and CSS
 by JakeKandell here on github.jakekand@usc.edu linkedin.com/in/jakekandell
 
 Practice site for the Canadian Citizenship Test. 
+![image](https://user-images.githubusercontent.com/33843929/156239162-68e6a120-eb25-445b-8ae3-2b4a34db3557.png)
+
 
 This will beome Computer Tutor site content. Idea is to provide free unlimited practice test based upon the actual bank of questions the real citizenship test draws from. I have 150 question available from Richmond BC public libary site. The second aspect of the site/service will be basic literacy mentoring - Basic Literacy being defined as ability to read and make notes from a Newspaper story. Level presumed to be around 6 grade public school English.
 

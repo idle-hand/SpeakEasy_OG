@@ -12,6 +12,8 @@ CSS, Html, and JS need work - Basic Python multiple quiz Forked from JakeKandell
 ![comptut2](https://user-images.githubusercontent.com/33843929/157319598-514cbc55-50b3-4d49-bb56-4b1878d6c31f.png)
 
 This will beome Computer Tutor site content.  Idea is to provide free unlimited practice test based upon the actual bank of questions the real citizenship test draws from.  I have 150 question available from Richmond BC public libary site. The second aspect of the site/service will be basic literacy mentoring - Basic Literacy being defined as ability to read and make notes from a Newspaper story.  Level presumed to be around 6 grade public school English. 
+new javascript quiz content can look like this 
+![image](https://user-images.githubusercontent.com/33843929/161302424-8c94c231-253e-4862-b300-d2238d221347.png)
 
 Vocabulary quiz setup much like the citizenship quiz will assist with basic English vocabulary building.  All of this will be open and free with no log in required.  More advanced one-to-one mentoring would be arranged via the Computer Tutor Site.
 

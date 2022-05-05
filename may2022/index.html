@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hello!</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+    <script>
+      callFrame = window.DailyIframe.createFrame();
+      callFrame.join({ url: "https://your-team.daily.co/hello" });
+    </script>
+    <h1>Hello, world!</h1>
+
+    <p>
+      Add a Daily room URL to callFrame.join in line 20 of script.js to demo a
+      call.
+    </p>
+    <p>
+      You can create a room URL from the
+      <a href="dashboard.daily.co">Daily dashboard</a>.
+    </p>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div
+      class="glitchButton"
+      style="position: fixed; top: 20px; right: 20px"
+    ></div>
+    <script src="https://button.glitch.me/button.js" defer></script>
+  </body>
+</html>

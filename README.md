@@ -10,6 +10,8 @@ Mar.10 2022 - working on css in pages using built-in dev tools for checking scre
 July 4, 2022 - Seems Canada Day would be a nice launch day for the project -
 Launch Goal July 1, 2023 - Canada Day - 
 
+2 quiz done by Zack Adam - july 21 - looks like Canada Day 2023 is a go.
+
 ![comptut1](https://user-images.githubusercontent.com/33843929/157319356-ef6e5b6a-7831-4d11-9180-d1d131807d2c.png)
 
 

@@ -14,7 +14,7 @@ Launch Goal July 1, 2023 - Canada Day -
 
 ![comptut1](https://user-images.githubusercontent.com/33843929/157319356-ef6e5b6a-7831-4d11-9180-d1d131807d2c.png)
 
-
+Aug 10 - hoping to get my new menus in this week. then onto Daily.js to tweak the chat window?
 
 Need to lose the Bootstrap menu from the Pythonanyhere pages - want hamburger menu for bet mobile look.  June 3 
 

@@ -2,7 +2,8 @@
 
 ![mylogo](https://user-images.githubusercontent.com/33843929/163722229-fcf8bf6d-119b-41e0-9fe3-713792bced1b.jpg)
 
-
+Oct. Update work for daily.js setup on Anvil site and awaits tests. 
+July 1 2023 is coming. 
 Practice site for the Canadian Citizenship Test. 
 
 Mar.10 2022 - working on css in pages using built-in dev tools for checking screens in different displasy - will update screen images next. 

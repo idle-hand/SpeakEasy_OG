@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+
+callFrame = window.DailyIframe.createFrame({
+  iframeStyle: {
+    position: 'fixed',
+    border: '10px solid black',
+    width: '400px',
+    height: '500px',
+    right: '25em',
+    bottom: '10em',
+  },
+  dailyConfig: {
+    micAudioMode: 'music',
+  },
+  showLeaveButton: true,
+  showFullscreenButton: true,
+});
+callFrame.join({  url: 'https://mytestroom.daily.co/mytestroom' });
+
+</script>
+</body>
+</html>

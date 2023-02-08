@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpeakEasy Quiz</title>
+ <style>
+      body {
+        background-color: #0B3D91;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .question {
+        margin-bottom: 50px;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      button {
+        background-color: #F0FFFF;
+        color: #0B3D91;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+        box-shadow: 0px 0px 10px #888888;
+        transition: all 0.3s;
+      }
+      button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 15px 20px #888888;
+      }
+      #score {
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+      @media (max-width: 500px) {
+        button {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+ 
+    <script>
+      let score = 0;
+      let currentQuestion = 0;
+      const questions = [  {    
+      text: "What is the capital of Alberta?",    options: ["Calgary",          "Edmonton", "Ottawa"],
+    answer: 1
+  },
+  {
+    text: "What is the capital of British Columbia?",
+    options: ["Victoria", "Vancouver", "Kelowna"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Manitoba?",
+    options: ["Winnipeg", "Brandon", "Steinbach"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of New Brunswick?",
+    options: ["Fredericton", "Saint John", "Moncton"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Newfoundland and Labrador?",
+    options: ["St. John's", "Mount Pearl", "Corner Brook"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Nova Scotia?",
+    options: ["Halifax", "Dartmouth", "Sydney"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Ontario?",
+    options: ["Toronto", "Ottawa", "Hamilton"],
+    answer: 1
+  },
+  {
+    text: "What is the capital of Prince Edward Island?",
+    options: ["Charlottetown", "Summerside", "Stratford"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Quebec?",
+    options: ["Montreal", "Quebec City", "Gatineau"],
+    answer: 1
+  },
+  {
+    text: "What is the capital of Saskatchewan?",
+    options: ["Regina", "Saskatoon", "Moose Jaw"],
+    answer: 0
+  }
+];
+
+
+      function checkAnswer(answer) {
+        if (questions[currentQuestion].answer === answer) {
+          score++;
+          alert("Correct!");
+        } else {
+          alert("Wrong.");
+        }
+        document.getElementById("score").innerHTML = score;
+      }
+      function displayQuestion() {
+        document.getElementById("question").innerHTML = questions[currentQuestion].text;
+        const options = questions[currentQuestion].options;
+        for (let i = 0; i < options.length; i++) {
+          const button = document.getElementById(`option${i}`);
+          button.innerHTML = options[i];
+          button.style.display = "inline-block";
+        }
+      }
+      function nextQuestion() {
+        currentQuestion++;
+        if (currentQuestion === questions.length) {
+          alert(`Quiz completed. Your score is ${score}`);
+          currentQuestion = 0;
+        }
+        displayQuestion();
+      }
+      function resetScore() {
+        score = 0;
+        currentQuestion = 0;
+        document.getElementById("score").innerHTML = score;
+        alert("Score has been reset.");
+        displayQuestion();
+      }
+    </script>
+  </head>
+  <body onload="displayQuestion()">
+    <h1>HTML Quiz</h1>
+    <p id="question"></p>
+    <button id="option0" onclick="checkAnswer(0)" style="display:none;"></button>
+    <button id="option1" onclick="checkAnswer(1)" style="display:none;"></button>
+    <button id="option2" onclick="checkAnswer(2)" style="display:none;"></button>    
+    <p>Your score: <span id="score">0</span></p>
+    <button onclick="resetScore()">Reset</button>
+    <button onclick="nextQuestion()">Next</button>
+  </body>
+</html>

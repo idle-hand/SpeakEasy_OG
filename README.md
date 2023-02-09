@@ -1,5 +1,22 @@
 #Speakeasy
 
+Welcome to SpeakEasy, an open-source platform designed to help new citizens with their test and basic English skills. This project is a turnkey solution that provides simple fill-in-the-blank quiz frameworks, which can be tailored to other content with instructions.
+
+Latest Updates
+Oct. Update: Work is in progress for the daily.js setup on the Anvil site and tests are expected soon. The launch goal for the platform is July 1, 2023 - Canada Day.
+Mar. 10, 2022: Work on CSS for different display screens is ongoing using built-in dev tools. The screen images will be updated soon.
+July 4, 2022: Canada Day is planned to be the launch day for the platform.
+July 21, 2022: Two quizzes have been completed by Zack Adam. The launch goal for Canada Day 2023 is on track.
+Aug 10, 2022: The focus is on incorporating the new menus for a better mobile look and tweaking the chat window in daily.js.
+June 3, 2022: The aim is to remove the Bootstrap menu from the Pythonanywhere pages and replace it with a hamburger menu.
+Technical details
+The platform is built using CSS, HTML, and JS and is forked from JakeKandell/quiz-site. The idea behind SpeakEasy is to provide free unlimited practice tests based on the actual bank of questions from the real Canadian Citizenship Test. The platform has access to 150 questions from the Richmond BC public library site.
+
+In addition to citizenship test practice, SpeakEasy also aims to provide basic literacy mentoring. Basic literacy is defined as the ability to read and make notes from a newspaper story, with a presumed level of around 6th grade public school English. The platform will include links to Computer Tutor - Online Learning Systems if individual attention is requested.
+
+A vocabulary quiz setup, much like the citizenship quiz, will be available to assist with basic English vocabulary building. All of the content on SpeakEasy will be open and free with no login required. More advanced one-to-one mentoring can be arranged through the Computer Tutor site.
+
+Join the SpeakEasy community today and improve your test and English skills for free!
 ![mylogo](https://user-images.githubusercontent.com/33843929/163722229-fcf8bf6d-119b-41e0-9fe3-713792bced1b.jpg)
 
 Oct. Update work for daily.js setup on Anvil site and awaits tests. 

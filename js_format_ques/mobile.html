@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Capital Quiz</title>
+    <link rel="stylesheet" type="text/css" href="wedtwo.css">
+
+  </head>
+  <body>
+    <div id="score"></div>
+<script type="text/javascript">
+
+
+    
+const questionContainer = document.getElementById("question-container");
+const questionElement = document.getElementById("question");
+const optionsContainer = document.getElementById("options-container");
+const scoreElement = document.getElementById("score");
+
+let questions = [];
+let currentQuestion = 0;
+let score = 0;
+
+fetch("questions.json")
+  .then(response => response.json())
+  .then(data => {
+    questions = data.questions;
+    showQuestion(currentQuestion);
+  });
+
+function showQuestion(index) {
+  const question = questions[index];
+  questionElement.innerText = question.question;
+  optionsContainer.innerHTML = "";
+  for (const option of question.options) {
+    const optionElement = document.createElement("div");
+    optionElement.innerText = option;
+    optionElement.addEventListener("click", selectOption);
+    optionsContainer.appendChild(optionElement);
+  }
+}
+
+function selectOption() {
+  const selectedOption = this;
+  const correct = selectedOption.innerText === questions[currentQuestion].answer;
+  if (correct) {
+    score++;
+  }
+  currentQuestion++;
+  if (currentQuestion === questions.length) {
+    questionContainer.innerHTML = "";
+    scoreElement.innerText = "Your score: " + score + "/" + questions.length;
+  } else {
+    showQuestion(currentQuestion);
+  }
+}
+</script>
+  </body>
+</html>

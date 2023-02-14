@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>   SpeakEasy Quiz</title>
+    
+ <style>
+      <style>
+  body {
+    background-color: #0B3D91;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .question {
+    margin-bottom: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .w3-button {
+    background-color: #F0FFFF;
+    color: #0B3D91;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    box-shadow: 0px 0px 10px #888888;
+    transition: all 0.3s;
+  }
+  .w3-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 20px #888888;
+  }
+  #score {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  @media (max-width: 500px) {
+    .w3-button {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+
+ 
+    <script>
+      let score = 0;
+      let currentQuestion = 0;
+      const questions = [  {    
+      text: "A Member of Parliament from Montreal announces that she will spend her weekend in her electoral district. This means she would be:",    options: ["In her office on Parliament Hill.", "Visiting the province of Quebec.", "In the part of Montreal where she was elected.", "Going on a vacation."],
+    answer: 2
+  },
+  {
+    text: "After a federal election, which party forms the new government?",
+    options: ["The party with the most elected representatives is invited by the Governor General to become the party in power.", "The Queen herself picks any party to run the government.", "The Governor General proposes a law for elected officials to become the governing body.", "The Premiers of each province pick a party to run the government"],
+    answer: 0
+  },
+  {
+    text: "Approximately how many Canadians served in the First World War?",
+    options: ["7000", "8 million", "About 60,000", "More than 600,000"],
+    answer: 3
+  },
+    {
+    text: "Canada has three territories and how many provinces?",
+    options: ["13", "10", "3", "5"],
+    answer: 1
+  },
+  {
+    text: "Fatima is a new immigrant in Canada. What law allows her to take a job at par with a man?",
+    options: ["Equality of women and men", "Equality of all races.", "Equal pay for equal work.", "Equal rights."],
+    answer: 0
+  },
+  {
+    text: "From where does the name “Canada” come from?",
+    options: ["From the Inuit word meaning country.", "From the French word meaning joining.", "From the Métis word meaning rivers.", "From “Kanata”, the Huron-Iroquois word for village."],
+    answer: 3
+  },
+  {
+    text: "Give an example of how you can show responsibility by participating in your community.",
+    options: ["Mind your own business.", "Have a party.", "Keep your property tidy.", "Volunteer."],
+    answer: 3
+  },
+  {
+    text: "Give an example of where English and French have equal status in Canada.",
+    options: ["In schools.", "In the workplace.", "In the Parliament of Canada.", "At City Hall."],
+    answer: 2
+  },
+  {
+    text: "Give the first line of Canada’s national anthem?",
+    options: ["O Canada! Our home and native land!", "O Canada! Our province and native land!", "O Canada! From far and wide, O Canada,", "O Canada! We stand on guard for thee."],
+    answer: 0
+  },
+  {
+    text: "How are Members of Parliament chosen?",
+    options: ["Appointed by the Prime Minister.", "Elected by Canadian citizens.", "Appointed by the Queen.", "Elected by the Provincial Ministers."],
+    answer: 1
+  },
+  {
+    text: "How are Senators chosen?",
+    options: ["By the Governor General of Canada.", "By the Premiers of all provinces.", "Appointed by the Queen.", "Senators are appointed by the Governor General on the advice of the Prime Minister."],
+    answer: 3
+  },
+ 
+  {
+    text: "What is the capital of New Brunswick?",
+    options: ["Fredericton", "Saint John", "Moncton"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Newfoundland and Labrador?",
+    options: ["St. John's", "Mount Pearl", "Corner Brook"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Nova Scotia?",
+    options: ["Halifax", "Dartmouth", "Sydney"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Ontario?",
+    options: ["Toronto", "Ottawa", "Hamilton"],
+    answer: 1
+  },
+  {
+    text: "What is the capital of Prince Edward Island?",
+    options: ["Charlottetown", "Summerside", "Stratford"],
+    answer: 0
+  },
+  {
+    text: "What is the capital of Quebec?",
+    options: ["Montreal", "Quebec City", "Gatineau"],
+    answer: 1
+  },
+  {
+    text: "What is the capital of Saskatchewan?",
+    options: ["Regina", "Saskatoon", "Moose Jaw"],
+    answer: 0
+  }
+];
+
+
+      function checkAnswer(answer) {
+        if (questions[currentQuestion].answer === answer) {
+          score++;
+          alert("Correct!");
+        } else {
+          alert("Wrong.");
+        }
+        document.getElementById("score").innerHTML = score;
+      }
+      function displayQuestion() {
+        document.getElementById("question").innerHTML = questions[currentQuestion].text;
+        const options = questions[currentQuestion].options;
+        for (let i = 0; i < options.length; i++) {
+          const button = document.getElementById(`option${i}`);
+          button.innerHTML = options[i];
+          button.style.display = "inline-block";
+        }
+      }
+      function nextQuestion() {
+        currentQuestion++;
+        if (currentQuestion === questions.length) {
+          alert(`Quiz completed. Your score is ${score}`);
+          currentQuestion = 0;
+        }
+        displayQuestion();
+      }
+      function resetScore() {
+        score = 0;
+        currentQuestion = 0;
+        document.getElementById("score").innerHTML = score;
+        alert("Score has been reset.");
+        displayQuestion();
+      }
+    </script>
+  </head>
+  <body onload="displayQuestion()">
+    <h1>   Canada Quiz</h1>
+  <div class="w3-third">  
+  <div class="w3-container w3-blue">
+    <p id="question"></p>
+    <button id="option0" onclick="checkAnswer(0)" style="display:none;"></button>
+    <br>
+    <button id="option1" onclick="checkAnswer(1)" style="display:none;"></button>
+    <br>
+    <button id="option2" onclick="checkAnswer(2)" style="display:none;"></button> 
+    <br>
+    <button id="option3" onclick="checkAnswer(3)" style="display:none;"></button>    
+    <p>Your score: <span id="score">0</span></p>
+    <button onclick="resetScore()">Reset</button>
+    <button onclick="nextQuestion()">Next</button>
+  </div>  
+  </div>  
+  </body>
+</html>

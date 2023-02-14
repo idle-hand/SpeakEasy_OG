@@ -1,0 +1,25 @@
+{
+  "questions": [
+    {
+      "question": "What is the capital of Alberta?",
+      "options": [
+        "Toronto",
+        "Edmonton",
+        "Calgary",
+        "Vancouver"
+      ],
+      "answer": "Edmonton"
+    },
+    {
+      "question": "What is the capital of British Columbia?",
+      "options": [
+        "Victoria",
+        "Vancouver",
+        "Calgary",
+        "Edmonton"
+      ],
+      "answer": "Victoria"
+    },
+    // Add more questions here...
+  ]
+}

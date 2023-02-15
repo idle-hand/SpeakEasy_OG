@@ -5,6 +5,7 @@
     <title>   SpeakEasy Quiz</title>
     
  <style>
+ 
       <style>
   body {
     background-color: #0B3D91;
@@ -18,7 +19,7 @@
   }
   .question {
     margin-bottom: 50px;
-    font-size: 1.5em;
+    font-size: 3em;
     font-weight: bold;
   }
   .w3-button {
@@ -45,6 +46,9 @@
       margin-bottom: 20px;
     }
   }
+  p {
+  font-size: 1.5em;
+}
 </style>
 
 
@@ -56,17 +60,62 @@
       text: "A Member of Parliament from Montreal announces that she will spend her weekend in her electoral district. This means she would be:",    options: ["In her office on Parliament Hill.", "Visiting the province of Quebec.", "In the part of Montreal where she was elected.", "Going on a vacation."],
     answer: 2
   },
-  {
+{
+text: "What country is Canada’s largest trading partner?",
+options: ["Mexico", "United States of America", "China", "Japan"],
+answer: 1
+},
+{
+text: "What did the Canadian Pacific Railway symbolize?",
+options: ["Easy access to the West Coast", "What can be achieved by working together", "Unity", "Ribbons of steel"],
+answer: 2
+},
+{
+text: "What did the Fathers of Confederation do?",
+options: ["They worked together to establish a new country, the Dominion of Canada", "They were explorers who formed an expedition to survey Northern Canada", "They formed a republic state in Canada", "They were a group of politicians that tried to unite Canada to the United States"],
+answer: 0
+},
+{
+text: "What do you call a law before it is passed?",
+options: ["A New law", "A Proposed law", "A Bill", "A New proposal"],
+answer: 2
+},
+{
+text: "What do you call the Sovereign’s representative in the provinces?",
+options: ["Premier", "Member of the Legislative Assembly", "Lieutenant-Governor", "Senator"],
+answer: 2
+},
+{
+text: "What do you mark on a federal election ballot?",
+options: ["The candidate's name", "The number for the candidate", "An 'X'", "The voter's name"],
+answer: 2
+},
+{
+text: "What does Confederation mean?",
+options: ["The United States Confederate soldiers came to Canada", "Joining of communities to become a province", "Joining of suburbs to form a large city", "Joining of provinces to make a new country"],
+answer: 3
+},
+{
+text: "What does it mean to say Canada is a constitutional monarchy?",
+options: ["The Sovereign (Queen or King) is the law maker of Canada", "Canada's Head of State is a hereditary Sovereign (Queen or King) who reigns in accordance with the Constitution", "The Sovereign (Queen or King) represents Canadians in Parliament", "The Sovereign (Queen or King) approves bills before becoming law"],
+answer: 1
+},
+{
+text: "What does the “right to a secret ballot” mean?",
+options: ["No one should tell you where to vote", "A secret vote used by politicians when they are voting on sensitive topics", "No one can watch your vote and no one should look at how you voted", "Your right to vote in secret on who to appoint to the Senate"],
+answer: 2
+ },
+ {
     text: "After a federal election, which party forms the new government?",
     options: ["The party with the most elected representatives is invited by the Governor General to become the party in power.", "The Queen herself picks any party to run the government.", "The Governor General proposes a law for elected officials to become the governing body.", "The Premiers of each province pick a party to run the government"],
     answer: 0
   },
   {
     text: "Approximately how many Canadians served in the First World War?",
-    options: ["7000", "8 million", "About 60,000", "More than 600,000"],
+    options: ["7000.", "8 million.", "About 60,000.", "More than 600,000."],
     answer: 3
   },
-    {
+  {
     text: "Canada has three territories and how many provinces?",
     options: ["13", "10", "3", "5"],
     answer: 1
@@ -106,42 +155,51 @@
     options: ["By the Governor General of Canada.", "By the Premiers of all provinces.", "Appointed by the Queen.", "Senators are appointed by the Governor General on the advice of the Prime Minister."],
     answer: 3
   },
- 
   {
-    text: "What is the capital of New Brunswick?",
-    options: ["Fredericton", "Saint John", "Moncton"],
-    answer: 0
-  },
-  {
-    text: "What is the capital of Newfoundland and Labrador?",
-    options: ["St. John's", "Mount Pearl", "Corner Brook"],
-    answer: 0
-  },
-  {
-    text: "What is the capital of Nova Scotia?",
-    options: ["Halifax", "Dartmouth", "Sydney"],
-    answer: 0
-  },
-  {
-    text: "What is the capital of Ontario?",
-    options: ["Toronto", "Ottawa", "Hamilton"],
-    answer: 1
-  },
-  {
-    text: "What is the capital of Prince Edward Island?",
-    options: ["Charlottetown", "Summerside", "Stratford"],
-    answer: 0
-  },
-  {
-    text: "What is the capital of Quebec?",
-    options: ["Montreal", "Quebec City", "Gatineau"],
-    answer: 1
-  },
-  {
-    text: "What is the capital of Saskatchewan?",
-    options: ["Regina", "Saskatoon", "Moose Jaw"],
-    answer: 0
-  }
+text: "What country is Canada’s largest trading partner?",
+options: ["Mexico", "United States of America", "China", "Japan"],
+answer: 1
+},
+{
+text: "What did the Canadian Pacific Railway symbolize?",
+options: ["Easy access to the West Coast", "What can be achieved by working together", "Unity", "Ribbons of steel"],
+answer: 2
+},
+{
+text: "What did the Fathers of Confederation do?",
+options: ["They worked together to establish a new country, the Dominion of Canada", "They were explorers who formed an expedition to survey Northern Canada", "They formed a republic state in Canada", "They were a group of politicians that tried to unite Canada to the United States"],
+answer: 0
+},
+{
+text: "What do you call a law before it is passed?",
+options: ["A New law", "A Proposed law", "A Bill", "A New proposal"],
+answer: 2
+},
+{
+text: "What do you call the Sovereign’s representative in the provinces?",
+options: ["Premier", "Member of the Legislative Assembly", "Lieutenant-Governor", "Senator"],
+answer: 2
+},
+{
+text: "What do you mark on a federal election ballot?",
+options: ["The candidate's name", "The number for the candidate", "An 'X'", "The voter's name"],
+answer: 2
+},
+{
+text: "What does Confederation mean?",
+options: ["The United States Confederate soldiers came to Canada", "Joining of communities to become a province", "Joining of suburbs to form a large city", "Joining of provinces to make a new country"],
+answer: 3
+},
+{
+text: "What does it mean to say Canada is a constitutional monarchy?",
+options: ["The Sovereign (Queen or King) is the law maker of Canada", "Canada's Head of State is a hereditary Sovereign (Queen or King) who reigns in accordance with the Constitution", "The Sovereign (Queen or King) represents Canadians in Parliament", "The Sovereign (Queen or King) approves bills before becoming law"],
+answer: 1
+},
+{
+text: "What does the “right to a secret ballot” mean?",
+options: ["No one should tell you where to vote", "A secret vote used by politicians when they are voting on sensitive topics", "No one can watch your vote and no one should look at how you voted", "Your right to vote in secret on who to appoint to the Senate"],
+answer: 2
+}
 ];
 
 
@@ -180,18 +238,23 @@
       }
     </script>
   </head>
+  <body class="w3-container w3-auto">
+   <br><br>
   <body onload="displayQuestion()">
-    <h1>   Canada Quiz</h1>
+  <div class="w3-container w3-blue">  
   <div class="w3-third">  
-  <div class="w3-container w3-blue">
+  
+  
+  <h1>   Canada Quiz</h1>
     <p id="question"></p>
     <button id="option0" onclick="checkAnswer(0)" style="display:none;"></button>
-    <br>
+    <br><br>
     <button id="option1" onclick="checkAnswer(1)" style="display:none;"></button>
-    <br>
+    <br><br>
     <button id="option2" onclick="checkAnswer(2)" style="display:none;"></button> 
-    <br>
-    <button id="option3" onclick="checkAnswer(3)" style="display:none;"></button>    
+    <br><br>
+    <button id="option3" onclick="checkAnswer(3)" style="display:none;"></button> 
+    <br><br>   
     <p>Your score: <span id="score">0</span></p>
     <button onclick="resetScore()">Reset</button>
     <button onclick="nextQuestion()">Next</button>

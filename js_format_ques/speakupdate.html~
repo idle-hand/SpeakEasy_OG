@@ -5,7 +5,7 @@
     <title>   SpeakEasy Quiz</title>
     
  <style>
-      <style>
+      
   body {
     background-color: #0B3D91;
     color: white;
@@ -185,14 +185,17 @@
   <div class="w3-third">  
   <div class="w3-container w3-blue">
     <p id="question"></p>
+    <br>
     <button id="option0" onclick="checkAnswer(0)" style="display:none;"></button>
-    <br>
+    <br><br>
     <button id="option1" onclick="checkAnswer(1)" style="display:none;"></button>
-    <br>
+    <br><br>
     <button id="option2" onclick="checkAnswer(2)" style="display:none;"></button> 
-    <br>
+    <br><br>
     <button id="option3" onclick="checkAnswer(3)" style="display:none;"></button>    
+     <br><br> <br><br>
     <p>Your score: <span id="score">0</span></p>
+     <br><br>
     <button onclick="resetScore()">Reset</button>
     <button onclick="nextQuestion()">Next</button>
   </div>  

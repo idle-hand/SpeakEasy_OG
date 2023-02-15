@@ -4,48 +4,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>   SpeakEasy Quiz</title>
     
- <style>
-      <style>
-  body {
-    background-color: #0B3D91;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  h1 {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  .question {
-    margin-bottom: 50px;
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  .w3-button {
-    background-color: #F0FFFF;
-    color: #0B3D91;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    box-shadow: 0px 0px 10px #888888;
-    transition: all 0.3s;
-  }
-  .w3-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 15px 20px #888888;
-  }
-  #score {
-    font-weight: bold;
-    font-size: 1.5em;
-  }
-  @media (max-width: 500px) {
-    .w3-button {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  }
-</style>
+
 
 
  
@@ -185,14 +144,17 @@
   <div class="w3-third">  
   <div class="w3-container w3-blue">
     <p id="question"></p>
+    <br>
     <button id="option0" onclick="checkAnswer(0)" style="display:none;"></button>
-    <br>
+    <br><br>
     <button id="option1" onclick="checkAnswer(1)" style="display:none;"></button>
-    <br>
+    <br><br>
     <button id="option2" onclick="checkAnswer(2)" style="display:none;"></button> 
-    <br>
+    <br><br>
     <button id="option3" onclick="checkAnswer(3)" style="display:none;"></button>    
+     <br><br> <br><br>
     <p>Your score: <span id="score">0</span></p>
+     <br><br>
     <button onclick="resetScore()">Reset</button>
     <button onclick="nextQuestion()">Next</button>
   </div>  

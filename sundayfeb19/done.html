@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS by David</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<body>
+
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+<div class="w3-container w3-theme-d2">
+  <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+  <br>
+  <div class="w3-padding w3-center">
+    <img class="w3-circle" src="me.jpg" alt="avatar" style="width:75%">
+  </div>
+</div>
+<a class="w3-bar-item w3-button" href="#">SpeakEasy</a>
+<a class="w3-bar-item w3-button" href="#">Flags</a>
+<a class="w3-bar-item w3-button" href="#">Capitals</a>
+</nav>
+
+<header class="w3-top w3-bar w3-theme">
+  <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+  <h1 class="w3-bar-item">SpeakEasy</h1>
+</header>
+
+<div class="w3-container" style="margin-top:90px">
+<hr>
+<div class="w3-cell-row">
+  <div class="w3-cell" style="width:30%">
+    <img class="w3-circle" src="tenor.gif" style="width:100%">
+  </div>
+  <div class="w3-cell w3-container">
+    <h1 class="w3-xxlarge">Citizenship</h1>
+    <p class="w3-xlarge">Real question in Citizenship Test - 15 of 20 in 30 minutes.</p>
+   </div>
+</div>  
+<hr>
+<div class="w3-cell-row">
+  <div class="w3-cell" style="width:30%">
+    <img class="w3-circle" src="images.jpeg" style="width:100%">
+  </div>
+<div class="w3-cell w3-container">
+    <h1 class="w3-xxlarge">Flag Fun</h1>
+    <p class="w3-xlarge">Practice the Provincial Flags and Capital Cities.</p>
+  </div>
+</div>
+<hr>
+<div class="w3-cell-row">
+  <div class="w3-cell" style="width:30%">
+    <img class="w3-circle" src="mylogo.jpg" style="width:100%">
+  </div>
+  <div class="w3-cell w3-container">
+     <h1 class="w3-xxlarge">SpeakEasy</h1>
+    <p class="w3-xlarge">Contact and Booking for Live Practice</p>
+    
+  </div>
+</div>
+<hr><hr>
+</div>
+
+<footer class="w3-container w3-bottom w3-theme w3-margin-top">
+  <h3>Online Learning Systems</h3>
+</footer>
+
+<script>
+closeSidebar();
+function openSidebar() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeSidebar() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>

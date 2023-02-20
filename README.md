@@ -1,6 +1,9 @@
-#Speakeasy
-
 Welcome to SpeakEasy, an open-source platform designed to help new citizens with their test and basic English skills. This project is a turnkey solution that provides simple fill-in-the-blank quiz frameworks, which can be tailored to other content with instructions.
+
+#Speakeasy![thepage](https://user-images.githubusercontent.com/33843929/220177749-d6ff2405-e81e-48bb-a6b9-84d5e4a0bcf8.png)
+
+
+
 
 Latest Updates
 Oct. Update: Work is in progress for the daily.js setup on the Anvil site and tests are expected soon. The launch goal for the platform is July 1, 2023 - Canada Day.

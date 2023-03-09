@@ -15,7 +15,7 @@ June 3, 2022: The aim is to remove the Bootstrap menu from the Pythonanywhere pa
 
 Technical details
 
-The platform is built using CSS, HTML, and JS and is forked from JakeKandell/quiz-site. The idea behind SpeakEasy is to provide free unlimited practice tests based on the actual bank of questions from the real Canadian Citizenship Test. The platform has access to 150 questions from the Richmond BC public library site.
+The platform is built using CSS, HTML, and JS  The idea behind SpeakEasy is to provide free unlimited practice tests based on the actual bank of questions from the real Canadian Citizenship Test. The platform has access to 150 questions from the Richmond BC public library site.
 
 In addition to citizenship test practice, SpeakEasy also aims to provide basic literacy mentoring. Basic literacy is defined as the ability to read and make notes from a newspaper story, with a presumed level of around 6th grade public school English. The platform will include links to Computer Tutor - Online Learning Systems if individual attention is requested.
 

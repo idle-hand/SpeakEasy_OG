@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+    <style>
+      /* Add custom styles here */
+      #quote-container {
+        margin: 50px auto;
+        text-align: center;
+      }
+
+      #quote {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      #author {
+        font-size: 20px;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body class="w3-mobile">
+    <div class="w3-container w3-teal">
+      <h1>Random Quote Generator</h1>
+    </div>
+    <div class="w3-container" id="quote-container">
+      <p id="quote"></p>
+      <p id="author"></p>
+    </div>
+    <button class="w3-button w3-blue" onclick="displayRandomQuote()">Generate Random Quote</button>
+
+    <script>
+      // Here's the JavaScript code to display the quotes
+      const quotes = [
+        {
+          quote: "Beware; for I am fearless, and therefore powerful.",
+          author: "Mary Shelley, Frankenstein"
+        },
+        {
+          quote: "All the darkness in the world cannot extinguish the light of a single candle.",
+          author: "Saint Francis of Assisi"
+        },
+        // Add the other quotes here
+      ];
+
+      function displayRandomQuote() {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quote").textContent = `"${randomQuote.quote}"`;
+        document.getElementById("author").textContent = `- ${randomQuote.author}`;
+      }
+    </script>
+  </body>
+</html>

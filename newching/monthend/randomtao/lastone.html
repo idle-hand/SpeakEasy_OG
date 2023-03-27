@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random I-Ching Quote Generator</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body {
+      background-color: #f8f8f8;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #3e8e41;
+    }
+
+    .quote-author {
+      color: #999;
+      font-size: 16px;
+      text-align: right;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Random I-Ching Quote Generator</h1>
+    <div id="quote-container">
+      <h2 id="quote-text"></h2>
+      <p id="quote-author"></p>
+      <button class="button" id="new-quote">New Quote</button>
+    </div>
+  </div>
+  <script>  
+    // Define an array of I-Ching quotes
+    var quotes = [
+      {
+    text: "The superior man is modest in his speech, but exceeds in his actions.",
+    author: "Confucius"
+  },
+  {
+    text: "The journey of a thousand miles begins with one step.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "He who conquers himself is the mightiest warrior.",
+    author: "Confucius"
+  },
+  {
+    text: "Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "To be wrong is nothing, unless you remember it afterward.",
+    author: "Confucius"
+  },
+  {
+    text: "Nature does not hurry, yet everything is accomplished.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "Success depends upon previous preparation, and without such preparation there is sure to be failure.",
+    author: "Confucius"
+  },
+  {
+    text: "Silence is a source of great strength.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "The cautious seldom err.",
+    author: "Confucius"
+  },
+  {
+    text: "The wise man does not lay up his own treasures. The more he gives to others, the more he has for his own.",
+    author: "Lao Tzu"
+  },
+      {
+        text: "The wise find pleasure in water; the virtuous find pleasure in hills. The wise are active; the virtuous are tranquil. The wise are joyful; the virtuous are long-lived.",
+        author: "Confucius"
+      },
+      {
+        text: "If you realize that all things change, there is nothing you will try to hold on to. If you are not afraid of dying, there is nothing you cannot achieve.",
+        author: "Lao Tzu"
+      },
+      {
+        text: "Patience is power. With time and patience, the mulberry leaf becomes silk.",
+        author: "Chinese Proverb"
+      },
+      {
+        text: "It does not matter how tall you are, but how well you stand tall.",
+        author: "Chinese Proverb"
+      },
+        {
+    text: "When you realize there is nothing lacking, the whole world belongs to you.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "Nature does not hurry, yet everything is accomplished.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "Silence is a source of great strength.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "Anticipate the difficult by managing the easy.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "Knowing others is intelligence; knowing yourself is true wisdom. Mastering others is strength; mastering yourself is true power.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "When I let go of what I am, I become what I might be.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "He who knows, does not speak. He who speaks, does not know.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "The wise man does not lay up his own treasures. The more he gives to others, the more he has for his own.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "In the midst of chaos, there is also opportunity.",
+    author: "Sun Tzu"
+  },
+  {
+    text: "The wise find pleasure in water; the virtuous find pleasure in hills. The wise are active; the virtuous are tranquil. The wise are joyful; the virtuous are long-lived.",
+    author: "Confucius"
+  },
+  {
+    text: "If you realize that all things change, there is nothing you will try to hold on to. If you are not afraid of dying, there is nothing you cannot achieve.",
+    author: "Lao Tzu"
+  },
+  {
+    text: "Patience is power. With time and patience, the mulberry leaf becomes silk.",
+    author: "Chinese Proverb"
+  },
+  {
+    text: "It does not matter how tall you are, but how well you stand tall.",
+    author: "Chinese Proverb"
+  }
+
+    ];
+
+    // Function to generate a random quote
+    function generateQuote() {
+      var randomIndex = Math.floor(Math.random() * quotes.length);
+      var quote = quotes[randomIndex];
+      document.getElementById("quote-text").innerHTML = quote.text;
+      document.getElementById("quote-author").innerHTML = "- " + quote.author;
+    }
+  </script>
+</body>
+</html>
+

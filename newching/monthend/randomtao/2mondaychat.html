@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random I-Ching Quotes</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+</head>
+<body>
+
+  <div class="w3-container w3-center">
+    <h1>Random I-Ching Quotes</h1>
+    <p id="quote"></p>
+    <button class="w3-button w3-round w3-green" onclick="generateQuote()">Generate Quote</button>
+  </div>
+
+  <script>
+    function generateQuote() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var quotes = JSON.parse(this.responseText);
+          var quote = quotes[Math.floor(Math.random() * quotes.length)];
+          document.getElementById("quote").innerHTML = '"' + quote.text + '" - ' + quote.author;
+        }
+      };
+      xhr.open("GET", "quotes.json", true);
+      xhr.send();
+    }
+  </script>
+
+</body>
+</html>

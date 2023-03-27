@@ -1,0 +1,35 @@
+body {
+	font-family: sans-serif;
+	text-align: center;
+	background-color: #f7f7f7;
+}
+
+h1 {
+	margin-top: 50px;
+}
+
+#quote {
+	font-size: 1.2em;
+	margin: 50px auto;
+	max-width: 80%;
+	line-height: 1.5;
+}
+
+#hexagram {
+	font-style: italic;
+}
+
+button {
+	font-size: 1.2em;
+	padding: 10px 20px;
+	border-radius: 10px;
+	border: none;
+	background-color: #333;
+	color: #fff;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+	background-color: #666;
+}

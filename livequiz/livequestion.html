@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Next Website Apr.02</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    /* Add round borders to everything */
+    * {
+      border-radius: 20px;
+    }
+  </style>
+  <style>
+  p {
+  border: 5px solid blue;
+  font-size: 18px;
+  padding: 10px 10px;
+}
+  body {
+    background-color: darkkhaki;
+
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
+
+  .question {
+
+    margin-bottom: 50px;
+    font-size: 3em;
+    font-weight: bold;
+
+  }
+  .w3-button {
+    background-color: #F0FFFF;
+    color: #0B3D91;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    margin-right: 10px;
+    box-shadow: 0px 0px 10px #888888;
+    transition: all 0.3s;
+  }
+  .w3-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 20px #888888;
+  }
+  #score {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  @media (max-width: 500px) {
+    .w3-button {
+      width: 60%;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+</head>
+
+<body class"w3-container" onload="displayQuestion()">
+<!-- Navigation Bar -->
+<div class="w3-bar w3-teal w3-card w3-round w3-half">
+<br>
+<a href="https://taoone.pythonanywhere.com/" class="w3-bar-item w3-button w3-mobile">Home</a>
+<a href="https://taoone.pythonanywhere.com/newflags" class="w3-bar-item w3-button w3-mobile">Flags</a> 
+<a href="https://taoone.pythonanywhere.com/kastone" class="w3-bar-item w3-button w3-mobile">Do Over</a>
+<!-- <button onclick="resetScore()">Reset</button> -->
+</div>
+<br>
+<!-- Header -->
+<br><br>
+<!--<div class="w3-container  w3-red w3-round  "> -->
+<div class="w3-bar w3-light-blue w3-card w3-round w3-half">
+<h2>Your Canada score: <span id="score">0</span></h2>
+</div>
+<br><br>
+<br><br>
+<div class="w3-container w3-green w3-round w3-half">
+<br><br>
+<div class="w3-container w3-dark-grey ">
+    <p id="question"></p>
+    <button id="option0" onclick="checkAnswer(0)" style="display:none;"></button>
+    <br><br>
+    <button id="option1" onclick="checkAnswer(1)" style="display:none;"></button>
+    <br><br>
+    <button id="option2" onclick="checkAnswer(2)" style="display:none;"></button>
+    <br><br>
+    <button id="option3" onclick="checkAnswer(3)" style="display:none;"></button>
+<br><br>
+</div>
+<br>
+</div>
+
+   <script>
+      let score = 0;
+      let currentQuestion = 0;
+      const questions = [  {
+text: "A Member of Parliament from Montreal announces that she will spend her weekend in her electoral district. This means she would be:",    
+options: ["In her office on Parliament Hill.", "Visiting the province of Quebec.", "In the part of Montreal where she was elected.", "Going on a vacation."],
+answer: 2
+  },
+{
+text: "What country is Canada’s largest trading partner?",
+options: ["Mexico", "United States of America", "China", "Japan"],
+answer: 1
+},
+{
+text: "What did the Canadian Pacific Railway symbolize?",
+options: ["Easy access to the West Coast", "What can be achieved by working together", "Unity", "Ribbons of steel"],
+answer: 2
+},
+{
+text: "What did the Fathers of Confederation do?",
+options: ["They worked together to establish a new country, the Dominion of Canada", "They were explorers who formed an expedition to survey Northern Canada", "They formed a republic state in Canada", "They were a group of politicians that tried to unite Canada to the United States"],
+answer: 0
+},
+{
+text: "What do you call a law before it is passed?",
+options: ["A New law", "A Proposed law", "A Bill", "A New proposal"],
+answer: 2
+},
+{
+text: "What do you call the Sovereign’s representative in the provinces?",
+options: ["Premier", "Member of the Legislative Assembly", "Lieutenant-Governor", "Senator"],
+answer: 2
+},
+{
+text: "What do you mark on a federal election ballot?",
+options: ["The candidate's name", "The number for the candidate", "An 'X'", "The voter's name"],
+answer: 2
+},
+{
+text: "What does Confederation mean?",
+options: ["The United States Confederate soldiers came to Canada", "Joining of communities to become a province", "Joining of suburbs to form a large city", "Joining of provinces to make a new country"],
+answer: 3
+},
+{
+text: "What does it mean to say Canada is a constitutional monarchy?",
+options: ["The Sovereign (Queen or King) is the law maker of Canada", "Canada's Head of State is a hereditary Sovereign (Queen or King) who reigns in accordance with the Constitution", "The Sovereign (Queen or King) represents Canadians in Parliament", "The Sovereign (Queen or King) approves bills before becoming law"],
+answer: 1
+},
+{
+text: "What does the “right to a secret ballot” mean?",
+options: ["No one should tell you where to vote", "A secret vote used by politicians when they are voting on sensitive topics", "No one can watch your vote and no one should look at how you voted", "Your right to vote in secret on who to appoint to the Senate"],
+answer: 2
+ },
+ {
+    text: "After a federal election, which party forms the new government?",
+    options: ["The party with the most elected representatives is invited by the Governor General to become the party in power.", "The Queen herself picks any party to run the government.", "The Governor General proposes a law for elected officials to become the governing body.", "The Premiers of each province pick a party to run the government"],
+    answer: 0
+  },
+  {
+    text: "Approximately how many Canadians served in the First World War?",
+    options: ["7000.", "8 million.", "About 60,000.", "More than 600,000."],
+    answer: 3
+  },
+  {
+    text: "Canada has three territories and how many provinces?",
+    options: ["13", "10", "3", "5"],
+    answer: 1
+  },
+  {
+    text: "Fatima is a new immigrant in Canada. What law allows her to take a job at par with a man?",
+    options: ["Equality of women and men", "Equality of all races.", "Equal pay for equal work.", "Equal rights."],
+    answer: 0
+  },
+  {
+    text: "From where does the name “Canada” come from?",
+    options: ["From the Inuit word meaning country.", "From the French word meaning joining.", "From the Métis word meaning rivers.", "From “Kanata”, the Huron-Iroquois word for village."],
+    answer: 3
+  },
+  {
+    text: "Give an example of how you can show responsibility by participating in your community.",
+    options: ["Mind your own business.", "Have a party.", "Keep your property tidy.", "Volunteer."],
+    answer: 3
+  },
+  {
+    text: "Give an example of where English and French have equal status in Canada.",
+    options: ["In schools.", "In the workplace.", "In the Parliament of Canada.", "At City Hall."],
+    answer: 2
+  },
+  {
+    text: "Give the first line of Canada’s national anthem?",
+    options: ["O Canada! Our home and native land!", "O Canada! Our province and native land!", "O Canada! From far and wide, O Canada,", "O Canada! We stand on guard for thee."],
+    answer: 0
+  },
+  {
+    text: "How are Members of Parliament chosen?",
+    options: ["Appointed by the Prime Minister.", "Elected by Canadian citizens.", "Appointed by the Queen.", "Elected by the Provincial Ministers."],
+    answer: 1
+  },
+  {
+    text: "How are Senators chosen?",
+    options: ["By the Governor General of Canada.", "By the Premiers of all provinces.", "Appointed by the Queen.", "Senators are appointed by the Governor General on the advice of the Prime Minister."],
+    answer: 3
+  },
+  {
+text: "What country is Canada’s largest trading partner?",
+options: ["Mexico", "United States of America", "China", "Japan"],
+answer: 1
+},
+{
+text: "What did the Canadian Pacific Railway symbolize?",
+options: ["Easy access to the West Coast", "What can be achieved by working together", "Unity", "Ribbons of steel"],
+answer: 2
+},
+{
+text: "What did the Fathers of Confederation do?",
+options: ["They worked together to establish a new country, the Dominion of Canada", "They were explorers who formed an expedition to survey Northern Canada", "They formed a republic state in Canada", "They were a group of politicians that tried to unite Canada to the United States"],
+answer: 0
+},
+{
+text: "What do you call a law before it is passed?",
+options: ["A New law", "A Proposed law", "A Bill", "A New proposal"],
+answer: 2
+},
+{
+text: "What do you call the Sovereign’s representative in the provinces?",
+options: ["Premier", "Member of the Legislative Assembly", "Lieutenant-Governor", "Senator"],
+answer: 2
+},
+{
+text: "What do you mark on a federal election ballot?",
+options: ["The candidate's name", "The number for the candidate", "An 'X'", "The voter's name"],
+answer: 2
+},
+{
+text: "What does Confederation mean?",
+options: ["The United States Confederate soldiers came to Canada", "Joining of communities to become a province", "Joining of suburbs to form a large city", "Joining of provinces to make a new country"],
+answer: 3
+},
+{
+text: "What does it mean to say Canada is a constitutional monarchy?",
+options: ["The Sovereign (Queen or King) is the law maker of Canada", "Canada's Head of State is a hereditary Sovereign (Queen or King) who reigns in accordance with the Constitution", "The Sovereign (Queen or King) represents Canadians in Parliament", "The Sovereign (Queen or King) approves bills before becoming law"],
+answer: 1
+},
+{
+text: "What does the “right to a secret ballot” mean?",
+options: ["No one should tell you where to vote", "A secret vote used by politicians when they are voting on sensitive topics", "No one can watch your vote and no one should look at how you voted", "Your right to vote in secret on who to appoint to the Senate"],
+answer: 2
+}
+];
+
+
+      function checkAnswer(answer) {
+        if (questions[currentQuestion].answer === answer) {
+          score++;
+         nextQuestion();
+        } else {
+          alert("Wrong.");
+        }
+        document.getElementById("score").innerHTML = score;
+      }
+      function displayQuestion() {
+        document.getElementById("question").innerHTML = questions[currentQuestion].text;
+        const options = questions[currentQuestion].options;
+        for (let i = 0; i < options.length; i++) {
+          const button = document.getElementById(`option${i}`);
+          button.innerHTML = options[i];
+          button.style.display = "inline-block";
+        }
+      }
+      function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion === questions.length) {
+    alert(`Quiz completed. Your score is ${score}`);
+    currentQuestion = 0;
+    score = 0; // Reset the score when the quiz is completed.
+  }
+  displayQuestion();
+}
+
+      function resetScore() {
+        score = 0;
+        currentQuestion = 0;
+        document.getElementById("score").innerHTML = score;
+        alert("Score has been reset.");
+        displayQuestion();
+      }
+    </script>
+
+</body>
+</html>

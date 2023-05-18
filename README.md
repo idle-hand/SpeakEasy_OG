@@ -1,6 +1,5 @@
 Join the SpeakEasy community today and improve your test and English skills for free!
 
-Welcome to SpeakEasy, an open-source platform designed to help new citizens with their test and basic English skills. This project is a turnkey solution that provides simple fill-in-the-blank quiz frameworks, which can be tailored for other content with instructions.
 
 SpeakEasy, is a platform designed to assist new citizens with the Canadian Citizenship test and basic English skills. Our goal is to provide a turnkey solution for individuals looking to improve their language abilities through practice and mentorship.
 

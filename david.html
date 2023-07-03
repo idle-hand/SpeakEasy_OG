@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canadian Citizenship Quiz</title>
+  <link rel="stylesheet" href="david.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+</head>
+<body>
+  <div id="quiz">
+    <h1>Canadian Citizenship Quiz</h1>
+    <div id="question-container"></div>
+    <button id="next-btn" class="w3-mobile w3-button w3-blue">Next</button>
+  </div>
+
+  <div id="fail-modal" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="closeFailModal()" class="w3-button w3-display-topright">&times;</span>
+        <h2>You would probably fail the Canadian Citizenship Test</h2>
+        <p>Please try again!</p>
+        <button class="w3-button w3-blue" onclick="resetQuiz()">Retry Quiz</button>
+        <a href="speakeasy.html" class="w3-button w3-blue">Go to SpeakEasy Page</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="success-modal" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="closeSuccessModal()" class="w3-button w3-display-topright">&times;</span>
+        <h2>Congratulations!</h2>
+        <p>Your final score is <span id="score"></span>.</p>
+        <a href="speakeasy.html" class="w3-button w3-blue">Go to SpeakEasy Page</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="david.js"></script>
+</body>
+</html>

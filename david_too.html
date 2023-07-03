@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canadian Citizenship Quiz</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+  <style>
+    /* Add your custom styles here */
+    #quiz {
+      text-align: center;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #question-container {
+      margin-top: 20px;
+    }
+
+    .w3-modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .w3-modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .w3-button {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="quiz">
+    <h1>Canadian Citizenship Quiz</h1>
+    <div id="question-container"></div>
+    <button id="next-btn" class="w3-mobile w3-button w3-blue">Next</button>
+  </div>
+
+  <div id="fail-modal" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="closeFailModal()" class="w3-button w3-display-topright">&times;</span>
+        <h2>You would probably fail the Canadian Citizenship Test</h2>
+        <p>Please try again!</p>
+        <button class="w3-button w3-blue" onclick="resetQuiz()">Retry Quiz</button>
+        <a href="speakeasy.html" class="w3-button w3-blue">Go to SpeakEasy Page</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="success-modal" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="closeSuccessModal()" class="w3-button w3-display-topright">&times;</span>
+        <h2>Congratulations!</h2>
+        <p>Your final score is <span id="score"></span>.</p>
+        <a href="speakeasy.html" class="w3-button w3-blue">Go to SpeakEasy Page</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const quizQuestions = [
+      {
+        question: "Which port is the largest and busiest in Canada?",
+        options: ["The Port of Halifax", "The Port of Montreal", "The Port of Vancouver", "The Port of Victoria"],
+        answer: "The Port of Vancouver"
+      },
+      {
+        question: "Who has the right to run as a candidate in federal elections?",
+        options: ["Anyone.", "A Canadian citizen who is 16 years old.", "Any man who is at least 18 years old.", "Any Canadian citizen who is at least 18 years old."],
+        answer: "Any Canadian citizen who is at least 18 years old."
+      },
+      {
+        question: "Who has the right to vote in federal elections?",
+        options: ["A Canadian citizen, 18 years or older, and on voters' list.", "A Canadian citizen, 18 years or older and must work for the federal government.", "A landed immigrant, 18 years old and a member of the Canadian Forces.", "A Canadian citizen, over 25 years and a member of the Canadian Forces."],
+        answer: "A Canadian citizen, 18 years or older, and on voters' list."
+      },
+      {
+        question: "Who have major responsibilities on First Nations reserves?",
+        options: ["Band chiefs and councillors.", "Municipal governments.", "Provincial and territorial governments.", "Federal government."],
+        answer: "Band chiefs and councillors."
+      },
+      {
+        question: "Who is Canada’s Head of State?",
+        options: ["Governor General of Canada.", "Her Majesty Queen Elizabeth II.", "Prime Minister.", "Lieutenant Governor."],
+        answer: "Her Majesty Queen Elizabeth II."
+      },
+      {
+        question: "Who is considered the father of Manitoba?",
+        options: ["John A. Macdonald", "Sam Steele", "Alfred Boyd", "Louis Riel"],
+        answer: "Louis Riel"
+      },
+      {
+        question: "Who is General Sir Arthur Currie?",
+        options: ["A military leader of the Métis in the 19th century.", "A great frontier hero.", "An explorer of western Canada.", "Canada's greatest soldier in the First World War."],
+        answer: "Canada's greatest soldier in the First World War."
+      },
+      {
+        question: "Who is the Head of Government?",
+        options: ["The President", "The Queen", "The Governor General", "The Prime Minister"],
+        answer: "The Prime Minister"
+      },
+      {
+        question: "Who is the leader of the Federal Official Opposition Party?",
+        options: ["Thomas Mulcair", "Andrew Scheer", "Erin O'Toole", "Elizabeth May"],
+        answer: "Erin O'Toole"
+      },
+      {
+        question: "Who is the Queen’s representative in Canada?",
+        options: ["Prime Minister of Canada.", "Premier.", "Her Majesty Queen Elizabeth II.", "Governor General of Canada."],
+        answer: "Governor General of Canada."
+      },
+      {
+        question: "Who led an armed uprising and seized Fort Garry?",
+        options: ["John A. Macdonald", "Louis Riel", "Sam Steele", "George-Étienne Cartier"],
+        answer: "Louis Riel"
+      },
+      {
+        question: "Who led Quebec into Confederation?",
+        options: ["Sir Louis-Hippolyte La Fontaine", "Sir George-Étienne Cartier", "Sir Wilfrid Laurier", "Sir John A. Macdonald"],
+        answer: "Sir George-Étienne Cartier"
+      }
+    ];
+
+    var currentQuestionIndex = 0;
+    var score = 0;
+
+    var questionContainer = document.getElementById("question-container");
+    var nextButton = document.getElementById("next-btn");
+    var failModal = document.getElementById("fail-modal");
+    var successModal = document.getElementById("success-modal");
+    var scoreElement = document.getElementById("score");
+
+    function initializeQuiz() {
+      showQuestion();
+    }
+
+    function showQuestion() {
+      var currentQuestion = quizQuestions[currentQuestionIndex];
+
+      questionContainer.innerHTML = "";
+
+      var questionElement = document.createElement("h2");
+      questionElement.textContent = currentQuestion.question;
+      questionContainer.appendChild(questionElement);
+
+      for (var i = 0; i < currentQuestion.options.length; i++) {
+        var option = currentQuestion.options[i];
+        var optionElement = document.createElement("button");
+        optionElement.textContent = option;
+        optionElement.classList.add("w3-mobile", "w3-button", "w3-white");
+        optionElement.addEventListener("click", checkAnswer);
+        questionContainer.appendChild(optionElement);
+      }
+    }
+
+    function checkAnswer(event) {
+      var selectedOption = event.target;
+      var selectedAnswer = selectedOption.textContent;
+      var currentQuestion = quizQuestions[currentQuestionIndex];
+
+      if (selectedAnswer === currentQuestion.answer) {
+        score++;
+      }
+
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizQuestions.length) {
+        showQuestion();
+      } else {
+        showFinalScore();
+      }
+    }
+
+    function showFinalScore() {
+      if (score < 8) {
+        failModal.style.display = "block";
+      } else {
+        successModal.style.display = "block";
+        scoreElement.textContent = score;
+      }
+    }
+
+    function closeFailModal() {
+      failModal.style.display = "none";
+    }
+
+    function closeSuccessModal() {
+      successModal.style.display = "none";
+    }
+
+    function resetQuiz() {
+      currentQuestionIndex = 0;
+      score = 0;
+      closeFailModal();
+      initializeQuiz();
+    }
+
+    initializeQuiz();
+  </script>
+</body>
+</html>
